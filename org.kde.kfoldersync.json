@@ -1,0 +1,25 @@
+{
+    "id": "org.kde.kfoldersync",
+    "branch": "master",
+    "runtime": "org.kde.Platform",
+    "runtime-version": "5.9",
+    "sdk": "org.kde.Sdk",
+    "command": "kfoldersync",
+    "rename-desktop-file": "kfoldersync.desktop",
+    "finish-args": ["--share=ipc", "--socket=x11", "--socket=wayland", "--env=QT_QPA_PLATFORM=flatpak" ],
+
+    "modules": [
+        {
+            "config-opts": ["-DCMAKE_BUILD_TYPE=Debug", "-DCMAKE_INSTALL_LIBDIR=lib"],
+            "name": "kfoldersync",
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://dl.opendesktop.org/api/files/download/id/1485353737/kfoldersync-3.4.1.tar.xz",
+                    "sha256": "e934bc9778f593ec098549914b8ff571003e5a432e6cf0a7d81bacfccad7ae11"
+                }
+            ]
+        }
+    ]
+}
